@@ -40,8 +40,6 @@ useEffect(() => {
 
   return (
     <>
-     
-  
      <Navbar bg="primary" variant="dark">
      <Navbar.Brand href="#home">HOME</Navbar.Brand>
      </Navbar>

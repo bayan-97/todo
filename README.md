@@ -1,4 +1,4 @@
-LAB - 31
+LAB - 32
 
 
 Author: bayan alalem
@@ -23,17 +23,18 @@ Allow the user to choose a method and store it in state
 This can be done with radio buttons or clickable elements
 pass the value to app.js .and create locale storge and 
 push the method and url and the data
-
-### list.js and  todo.js 
+### useform.js 
+context hook useing to use function and update 
+### list.js and  todo-connected.js 
 Use it’s own .scss file for styling
-and add some of text 
-git all the data from app 
-and render them 
-
-
+to get information from api 
+and delelt amd put and post 
+ ## newajax.js 
+context hook useing to use function and update 
 
 
 
 
 
 UML Diagram
+![](lab32white.PNG)

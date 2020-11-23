@@ -10,7 +10,7 @@ function TodoForm(props) {
 //     setItem({...item, [e.target.name]: e.target.value } )
 //     console.log("vv",item)
 //   };
-const [item, handleInputChange, handleSubmit] = useForm(props);
+const [ handleInputChange, handleSubmit] = useForm(props);
 
 // const  handleSubmit = (e) => {
 //     e.preventDefault();

@@ -95,7 +95,7 @@ const useAjaxs = () => {
 	// 	},
 	// 	[ list ]
 	// );
-	return [ list, handleSubmitpost, handleSubmitput, handleSubmitget, setList, handleSubmitdelete ];
+	return [ list, handleSubmitpost, handleSubmitput, handleSubmitdelete ];
 };
 
 export default useAjaxs;

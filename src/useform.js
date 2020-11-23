@@ -13,7 +13,7 @@ const useForm = (props) => {
 	const handleInputChange = (e) => {
 		setItem({ ...item, [e.target.name]: e.target.value });
 	};
-	return [ item, handleInputChange, handleSubmit ];
+	return [ handleInputChange, handleSubmit ];
 };
 
 export default useForm;

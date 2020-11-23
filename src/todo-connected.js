@@ -16,7 +16,7 @@ const ToDo = () => {
  
 
 
-  const [list, handleSubmitpost, handleSubmitput,handleSubmitget,setList,handleSubmitdelete] = useajax();
+  const [list, handleSubmitpost, handleSubmitput,handleSubmitdelete] = useajax();
   // console.log("bb",handleSubmitpost)
   console.log("gggg555",list)
   

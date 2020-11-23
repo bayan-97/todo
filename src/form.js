@@ -1,21 +1,25 @@
 import { useState } from 'react';
 import { Button,Form } from 'react-bootstrap';
+import useForm from './useform';
+
 
 function TodoForm(props) {
-  const [item, setItem] = useState({});
- const handleInputChange = e => {
-     console.log("vv",e.target)
-    setItem({...item, [e.target.name]: e.target.value } )
-  };
+//   const [item, setItem] = useState({});
+//  const handleInputChange = e => {
+//      console.log("vv",e.target)
+//     setItem({...item, [e.target.name]: e.target.value } )
+//     console.log("vv",item)
+//   };
+const [item, handleInputChange, handleSubmit] = useForm(props);
 
-const  handleSubmit = (e) => {
-    e.preventDefault();
-    e.target.reset();
-    console.log("itemform",item)
-   props.handleSubmit(item);
-    const item1 = {};
-    setItem({item:item1})
-  };
+// const  handleSubmit = (e) => {
+//     e.preventDefault();
+//     e.target.reset();
+//     console.log("itemform",item)
+//    props.handleSubmit(item);
+//     const item1 = {};
+//     setItem({item:item1})
+//   };
   return (
     <>
     <form onSubmit={handleSubmit}>

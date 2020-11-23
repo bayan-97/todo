@@ -1,5 +1,5 @@
 
-import ToDo from './todo.js';
+import ToDo from './todo-connected';
 
 function App() {
   return (

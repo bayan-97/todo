@@ -64,6 +64,7 @@ const ToDo = () => {
 
     }
   };
+  
   const _toggledelete = (id) => {
     console.log("gggg",id)
     let item = list.filter(i => i._id === id)[0] || {};

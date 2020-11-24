@@ -31,10 +31,12 @@ to get information from api
 and delelt amd put and post 
  ## newajax.js 
 context hook useing to use function and update 
+ ## settings.js 
+ deal with the user useing
 
 
 
 
 
 UML Diagram
-![](lab32white.PNG)
+![](lab33url.PNG)

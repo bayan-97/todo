@@ -1,9 +1,8 @@
-
+import React from 'react';
 import TodoForm from './form.js';
 import TodoList from './list.js';
 import './todo.scss';
 import useajax from './ newajax.js';
-
 
 
 
@@ -13,7 +12,7 @@ const todoAPI = 'https://api-js401.herokuapp.com/api/v1/todo';
 const ToDo = () => {
 
 
- 
+  // const context = useContext(SettingsContext);
 
 
   const [list, handleSubmitpost, handleSubmitput,handleSubmitdelete] = useajax();
@@ -48,8 +47,8 @@ const ToDo = () => {
       item.complete = !item.complete;
          let url = `${todoAPI}/${id}`;
       console.log("ggggghhhg",id)
+     
       handleSubmitput(`${url}`,'put',item)
-    
      
       // axios({
       //   method: 'put',
@@ -67,7 +66,7 @@ const ToDo = () => {
   
   const _toggledelete = (id) => {
     console.log("gggg",id)
-    let item = list.filter(i => i._id === id)[0] || {};
+    // let item = list.filter(i => i._id === id)[0] || {};
     let url = `${todoAPI}/${id}`;
   handleSubmitdelete(`${url}`,'delete')
   // item.due = new Date();

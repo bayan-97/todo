@@ -30,18 +30,6 @@ const useAjaxs = () => {
 			.catch(console.error);
 	};
 
-	const handleSubmitget = (url, method) => {
-		axios({
-			method: `${method}`,
-			url: `${url}`
-			// headers: { 'content-type': 'application/x-www-form-urlencoded' },
-		})
-			.then((savedItem) => {
-				setList(savedItem.data.results);
-				console.log('vvg', savedItem.data.results);
-			})
-			.catch(console.error);
-	};
 	const handleSubmitdelete = (url, method) => {
 		axios({
 			method: `${method}`,

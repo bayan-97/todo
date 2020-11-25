@@ -55,12 +55,21 @@ function handle(i){
   }
 }
 function handle2(i){
+   context.setCompleted(!context.completed )
+   let item1;
+if(context.completed){
+  let item = itemsDisplay.filter(item =>item.complete );
+   item1 = itemsDisplay.filter(item =>!item.complete );
 
-    let item = itemsDisplay.filter(item =>item.complete );
 
- 
-     setItemsDisplay(item)
-       console.log("page22",item)
+   setItemsDisplay(item)
+  
+}
+// else{
+//   setItemsDisplay([...itemsDisplay,item1])
+//   console.log("pageff",eachPage,context)
+// }
+      
     // }
   // console.log("page",context.setItemsDisplay(eachPage))
        
@@ -81,11 +90,6 @@ console.log("pageff",eachPage,context)
 	return (
         <>
         <ul> 
-
-
-
-        
-
    
             {
   
@@ -128,7 +132,7 @@ console.log("pageff",eachPage,context)
                </Button> )}
                <Button  onClick = {handle2} >filter our item
  
-               </Button> )
+               </Button> 
         
 
 

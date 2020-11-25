@@ -3,37 +3,29 @@ import TodoForm from './form.js';
 import TodoList from './list.js';
 import './todo.scss';
 import useajax from './ newajax.js';
+import Auth from './authcontext.js';
+import {  Navbar, Row,Col,Container } from 'react-bootstrap';
+import { If, Else, Then } from 'react-if';
 
 
 
 const todoAPI = 'https://api-js401.herokuapp.com/api/v1/todo';
 
 
-const ToDo = () => {
+const ToDo = (props) => {
 
 
-  // const context = useContext(SettingsContext);
-
+ 
 
   const [list, handleSubmitpost, handleSubmitput,handleSubmitdelete] = useajax();
-  // console.log("bb",handleSubmitpost)
-  console.log("gggg555",list)
+
+  console.log("props",props.condition)
   
   const _addItem = (item) => {
       console.log("gggg",item)
 
     handleSubmitpost('https://api-js401.herokuapp.com/api/v1/todo','post',item)
-    // item.due = new Date();
-    //  axios({
-    //     method: 'post',
-    //     url: 'https://api-js401.herokuapp.com/api/v1/todo',
-    //     data: item,
-    //     // headers: { 'content-type': 'application/x-www-form-urlencoded' }
-    //   })
-    //   .then(savedItem => {
-    //     setList([...list, savedItem.data])
-    //   })
-    //   .catch(console.error);
+
 
   };
 
@@ -49,37 +41,16 @@ const ToDo = () => {
       console.log("ggggghhhg",id)
      
       handleSubmitput(`${url}`,'put',item)
-     
-      // axios({
-      //   method: 'put',
-      //   url: `${todoAPI}/${id}`,
-      //   data: item,
-      //   // headers: { 'content-type': 'application/x-www-form-urlencoded' }
-      // })
-      // .then(savedItem => {
-      //     setList(list.map(listItem => listItem._id === item._id ? savedItem.data : listItem));
-      //   })
-      //   .catch(console.error);
+
 
     }
   };
   
   const _toggledelete = (id) => {
-    console.log("gggg",id)
-    // let item = list.filter(i => i._id === id)[0] || {};
+  
     let url = `${todoAPI}/${id}`;
   handleSubmitdelete(`${url}`,'delete')
-  // item.due = new Date();
-  //  axios({
-  //     method: 'post',
-  //     url: 'https://api-js401.herokuapp.com/api/v1/todo',
-  //     data: item,
-  //     // headers: { 'content-type': 'application/x-www-form-urlencoded' }
-  //   })
-  //   .then(savedItem => {
-  //     setList([...list, savedItem.data])
-  //   })
-  //   .catch(console.error);
+
 
 };
 
@@ -92,27 +63,51 @@ const ToDo = () => {
 
   return (
     <>
-      <header>
-        <h2>
-          There are {list.filter(_getTodoItems).length} Items To Complete
-        </h2>
-      </header>
+      <Container collapseOnSelect expand="lg" variant="dark" fluid='md'>
+      <Row>
+     
+     <Row>
+  <Col  variant="dark" ><p>There are {list.filter(_getTodoItems).length} Items To Complete</p></Col>
+          
+      
+     </Row>
+    
+    
+      </Row>
+     </Container>
 
+
+    
+   
+    { console.log("props",props.condition)}
+    
+    
+     
+      <section className="todo">
+      <Auth capability="create">
       <section className="todo">
 
-        <div>
+     <div>
           <TodoForm handleSubmit={_addItem} />
         </div>
+      </section>
+       </Auth> 
+      
 
-        <div>
-          {console.log("ggggss",useajax()[0])}
-          <TodoList
+     <div>
+     <TodoList
             list={list}
             handleComplete={_toggleComplete}
             handledelete={_toggledelete}
           />
         </div>
       </section>
+    
+
+
+
+
+
     </>
   );
 };

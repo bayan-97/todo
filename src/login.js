@@ -1,6 +1,5 @@
 import React, { useContext, useState } from 'react';
 import { LoginContext } from './auth';
-
 import { Button, Form, Navbar, FormControl } from 'react-bootstrap';
 import { If, Else, Then } from 'react-if';
 
@@ -12,12 +11,12 @@ function Login(props) {
 	const [ username, setusername ] = useState('');
 	const [ password, setpassword ] = useState('');
 
-	const state = {
-		username,
-		setusername,
-		password,
-		setpassword
-	};
+	// const state = {
+	// 	username,
+	// 	setusername,
+	// 	password,
+	// 	setpassword
+	// };
 
 	const handleChange = (e) => {
 		if (e.target.name === 'username') {

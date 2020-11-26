@@ -12,10 +12,6 @@ function LoginProvider(props) {
 	const [ loggedIn, setloggedIn ] = useState(false);
 	const [ user, setuser ] = useState({});
 
-	useEffect(() => {
-		const token = cookie.load('auth');
-		validateToken(token);
-	}, []);
 	const validateToken = (token) => {
 		console.log(token);
 		try {
@@ -60,6 +56,11 @@ function LoginProvider(props) {
 	const logout = () => {
 		setLoginState(false, null, {});
 	};
+	useEffect(() => {
+		const token = cookie.load('auth');
+		validateToken(token);
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, []);
 	const state = {
 		loggedIn,
 		setloggedIn,

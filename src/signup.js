@@ -13,16 +13,16 @@ function Login(props) {
 	const [ email, setemil ] = useState('');
 	const [ role, setrole ] = useState('user');
 
-	const state = {
-		username,
-		setusername,
-		email,
-		setemil,
-		password,
-		setpassword,
-		role,
-		setrole
-	};
+	// const state = {
+	// 	username,
+	// 	setusername,
+	// 	email,
+	// 	setemil,
+	// 	password,
+	// 	setpassword,
+	// 	role,
+	// 	setrole
+	// };
 
 	const handleChange = (e) => {
 		if (e.target.name === 'username') {

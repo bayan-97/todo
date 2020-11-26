@@ -1,11 +1,13 @@
 /* eslint-disable no-lone-blocks */
 import React, { useContext ,useState } from 'react';
 import { SettingsContext } from './setteing';
+import Auth from './authcontext.js';
        
  import { ListGroup,Modal,ButtonGroup,Button } from 'react-bootstrap';
 
 
 function TodoList(props) {
+  
   const context = useContext(SettingsContext);
   const [ itemsDisplay, setItemsDisplay ] = useState([]);
   
@@ -34,6 +36,7 @@ function TodoList(props) {
   
 
   
+
 function handle(i){
   console.log(i)
   if(i<numberOfPagesArr.length){
@@ -48,19 +51,28 @@ function handle(i){
          }
        }
      setItemsDisplay(eachPage)
-       console.log("page22",eachPage)
+     console.log("page22",eachPage)
+     return
     // }
   // console.log("page",context.setItemsDisplay(eachPage))
        
   }
 }
 function handle2(i){
-
-    let item = itemsDisplay.filter(item =>item.complete );
-
+   context.setCompleted(!context.completed )
+   
+if(context.completed){
+  let item = itemsDisplay.filter(item =>item.complete );
  
-     setItemsDisplay(item)
-       console.log("page22",item)
+
+   setItemsDisplay(item)
+  
+}
+// else{
+//   setItemsDisplay([...itemsDisplay,item1])
+//   console.log("pageff",eachPage,context)
+// }
+      
     // }
   // console.log("page",context.setItemsDisplay(eachPage))
        
@@ -75,18 +87,12 @@ console.log("pageff",eachPage,context)
 
  
 
-
   
 
 	return (
         <>
         <ul> 
-
-
-
-        
-
-   
+     
             {
   
           itemsDisplay.map((item) => (
@@ -94,20 +100,24 @@ console.log("pageff",eachPage,context)
 
                     <Modal.Dialog>
                   <ListGroup.Item action   key={item._id} fluid="md">
-             
-               <Modal.Header closeButton  onClick = {() => props.handledelete(item._id)}>
-                 
-                 <Modal.Title>assigne: {item.assignee }</Modal.Title>
-               
+                  <Auth capability="delete">
+               <Modal.Header closeButton  onClick = {() =>{
+                  if( props.handledelete){
+                    props.handledelete(item._id) }
+                   }
+                }>
                </Modal.Header>
+                   </Auth>
+               
              
                 
                 
                <Modal.Body>
-            
-               <Modal.Title onClick = {() => props.handleComplete(item._id)}> {item.complete?"complete":"pending" }</Modal.Title>
+                 <Modal.Title>assigne: {item.assignee }</Modal.Title>
+               <Auth capability="update">
+               <Modal.Title onClick = {() =>props.handleComplete(item._id)}> {item.complete?"complete":"pending" }</Modal.Title></Auth>
                {item.text}
-                     
+               {item.complete?"complete":"pending" }
                </Modal.Body>
                <Modal.Footer>
                difelecty: {item.difficulty }
@@ -128,7 +138,8 @@ console.log("pageff",eachPage,context)
                </Button> )}
                <Button  onClick = {handle2} >filter our item
  
-               </Button> )
+               </Button> 
+              
         
 
 

@@ -12,24 +12,6 @@ function LoginProvider(props) {
 	const [ loggedIn, setloggedIn ] = useState(false);
 	const [ user, setuser ] = useState({});
 
-	// const state = {
-	// 	loggedIn,
-	// 	setloggedIn,
-	// 	user,
-	// 	setuser,
-	// 	login,
-	// 	logout
-	// };
-
-	// constructor(props) {
-	// 	super(props);
-	// state = {
-	// 		loggedIn: false,
-	// 		login: this.login,
-	// 		logout: this.logout,
-	// 		user: {}
-	// 	};
-
 	useEffect(() => {
 		const token = cookie.load('auth');
 		validateToken(token);

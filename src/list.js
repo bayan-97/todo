@@ -60,11 +60,10 @@ function handle(i){
 }
 function handle2(i){
    context.setCompleted(!context.completed )
-   let item1;
+   
 if(context.completed){
   let item = itemsDisplay.filter(item =>item.complete );
-   item1 = itemsDisplay.filter(item =>!item.complete );
-
+ 
 
    setItemsDisplay(item)
   

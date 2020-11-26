@@ -4,8 +4,8 @@ import TodoList from './list.js';
 import './todo.scss';
 import useajax from './ newajax.js';
 import Auth from './authcontext.js';
-import {  Navbar, Row,Col,Container } from 'react-bootstrap';
-import { If, Else, Then } from 'react-if';
+import {  Row,Col,Container } from 'react-bootstrap';
+
 
 
 

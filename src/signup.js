@@ -25,11 +25,11 @@ function Login(props) {
 	};
 
 	const handleChange = (e) => {
-		if (e.target.name == 'username') {
+		if (e.target.name === 'username') {
 			setusername(e.target.value);
-		} else if (e.target.name == 'password') {
+		} else if (e.target.name === 'password') {
 			setpassword(e.target.value);
-		} else if (e.target.name == 'email') {
+		} else if (e.target.name === 'email') {
 			setemil(e.target.value);
 		} else {
 			setrole(e.target.value);

@@ -20,7 +20,7 @@ function Login(props) {
 	};
 
 	const handleChange = (e) => {
-		if (e.target.name == 'username') {
+		if (e.target.name === 'username') {
 			setusername(e.target.value);
 		} else {
 			setpassword(e.target.value);
